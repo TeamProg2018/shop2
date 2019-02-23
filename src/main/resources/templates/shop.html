@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop</title>
+</head>
+<body>
+
+<form method="post" action="/addShop">
+    <input type="text" name="shopName" placeholder="Shop's name"/>
+    <button type="submit">Add shop</button>
+</form>
+<br>
+
+<form method="post" action="/showAll">
+    <button type="submit">Show all shops</button>
+</form>
+
+<tr th:each="AddShop:${keyAddShop}">
+    <td th:text="${AddShop.shop_id}"></td>
+    <td th:text="${AddShop.shopName}"></td>
+    <br>
+</tr>
+<br>
+
+
+
+<form method="post" action="/goToShop">
+    <input type="text" name="shopNameByGoToShop" placeholder="Go to shop"/>
+    <button type="submit">Go to shop</button>
+</form>
+<br>
+
+<form method="post" action="/renameShop">
+    <input type="text" name="oldName" placeholder="Old shop's name"/>
+    <input type="text" name="newName" placeholder="Set new shop's name"/>
+    <button type="submit">Rename</button>
+</form>
+<br>
+
+<form method="post" action="/deleteShop">
+    <input type="text" name="shopId" placeholder="Delete shop by id"/>
+    <button type="submit">Delete</button>
+</form>
+</body>
+</html>
